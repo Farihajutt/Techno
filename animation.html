@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .ten58{
+            height: 5px;
+            width: 500px;
+            background-color: gainsboro;
+            margin-top: 100px;
+            margin-left: 100px;
+            border-radius: 3px;
+            position: relative;
+        }
+        .ten59{
+            height: 6px;
+            width: 70%;
+            background-color: blue;
+            animation: animations 1s linear 1s;
+            position: absolute;
+        }
+        @keyframes animations{
+            from{
+                width: 0;
+            }
+            to{
+                width: 70%;
+            }
+        }
+        .percentage{
+            height: 30px;
+            width: 30px;
+            border: 1px solid;
+            margin-left: 200px;
+            margin-top: -32px;
+            animation: scale 1s linear infinite;
+            position: absolute;
+
+        }
+        @keyframes scale{
+            from{
+                margin-left: 200px;
+            
+            
+            }
+            to{
+                margin-right: 600px;
+            }
+        }
+
+
+
+    </style>
+
+
+
+
+
+</head>
+<body>
+    <div class="ten58">
+        <div class="ten59"></div>
+    </div>
+    <div class="percentage">90%</div>
+    
+</body>
+</html>

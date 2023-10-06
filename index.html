@@ -1,0 +1,2854 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .section {
+            height: 170vh;
+            width: 100%;
+            background-image: url(./images/consulting2.jpg);
+            background-position: center;
+            background-size: cover;
+            padding: 1px;
+        }
+
+        .logo {
+            height: 50px;
+            width: 180px;
+            margin-left: 70px;
+            margin-top: 50px;
+            display: inline-block;
+            vertical-align: top;
+        }
+
+        .navbar {
+            height: 40px;
+            width: 720px;
+            display: inline-block;
+            vertical-align: top;
+            margin-top: 60px;
+            margin-left: 200px;
+
+        }
+
+        .navlist {
+            list-style: none;
+            color: rgba(255, 255, 255, 0.927);
+            display: inline-block;
+            margin-left: 20px;
+            position: relative;
+            font-size: 110%;
+            cursor: pointer;
+            transition: .34s;
+        }
+
+        .arrowdown {
+            font-size: 70%;
+            cursor: pointer;
+            margin-left: 5px;
+        }
+
+        .dropdown {
+            width: 1100px;
+            height: 500px;
+            margin-left: -400px;
+            background-color: white;
+            position: absolute;
+            left: 0;
+            top: 90px;
+            transition: .34s;
+            opacity: 0;
+            z-index: -1;
+            cursor: pointer;
+            padding-top: 30px;
+        }
+
+        .text:hover {
+            color: rgba(0, 0, 255, 0.767)
+        }
+
+        .navlist:hover .dropdown {
+            top: 70px;
+            opacity: 1;
+            z-index: 1;
+        }
+
+        .text {
+            height: 100%;
+            width: 25%;
+            display: inline-block;
+            vertical-align: top;
+        }
+
+        .text1 {
+            height: 100%;
+            width: 20%;
+            margin-left: 20px;
+            display: inline-block;
+            vertical-align: top;
+        }
+
+        .text2 {
+            height: 100%;
+            width: 20%;
+            margin-left: 40px;
+            display: inline-block;
+            vertical-align: top;
+        }
+
+        .text3 {
+            height: 100%;
+            width: 20%;
+            margin-left: 40px;
+            display: inline-block;
+            vertical-align: top;
+        }
+
+        .one {
+            list-style: none;
+            color: rgba(0, 0, 0, 0.74);
+            line-height: 45px;
+            margin-left: 40px;
+        }
+
+        .dropdown1 {
+            position: absolute;
+            width: 260px;
+            height: 150px;
+            background-color: white;
+            top: 90px;
+            transition: .34s;
+            opacity: 0;
+            z-index: -1;
+            cursor: pointer;
+            padding-top: 15px;
+        }
+
+        .navlist:hover .dropdown1 {
+            opacity: 1;
+            z-index: 1;
+            top: 70px;
+        }
+
+        .one1 {
+            list-style: none;
+            color: rgba(0, 0, 0, 0.74);
+            line-height: 30px;
+            margin-left: 20px;
+            cursor: pointer;
+
+        }
+
+        .one1:hover {
+            background-color: blue;
+            color: white;
+            width: 100%;
+            margin-left: 0;
+        }
+
+        .dropdown2 {
+            width: 1100px;
+            margin-left: -700px;
+            height: 250px;
+            position: absolute;
+            opacity: 0;
+            background-color: white;
+            z-index: -1;
+            top: 90px;
+            cursor: pointer;
+            padding-left: 10px;
+            padding-right: 10px;
+        }
+
+        .navlist:hover .dropdown2 {
+            opacity: 1;
+            z-index: 1;
+            top: 70px;
+        }
+
+        .two {
+            height: 100%;
+            width: 16%;
+            display: inline-block;
+            vertical-align: top;
+
+        }
+
+        .one2 {
+            list-style: none;
+            color: rgba(0, 0, 0, 0.74);
+            line-height: 30px;
+            margin-left: 20px;
+            cursor: pointer;
+
+        }
+
+        .one3 {
+            list-style: none;
+            color: rgba(0, 0, 0, 0.74);
+            line-height: 40px;
+            margin-left: 20px;
+            cursor: pointer;
+            margin-top: 30px;
+
+        }
+
+        .one4 {
+            color: white;
+            text-align: center;
+            margin-top: 240px;
+            font-size: 170%;
+            font-weight: lighter;
+        }
+
+        .main {
+            width: 43%;
+            height: 100px;
+            position: relative;
+            border-right: 8px solid white;
+            margin: 100px auto;
+            animation: duster 10s linear infinite;
+            white-space: nowrap;
+            overflow: hidden;
+            color: white;
+            margin-top: 30px;
+        }
+
+        @keyframes duster {
+            0% {
+                width: 0;
+            }
+
+            16% {
+                width: 78%;
+            }
+
+            21% {
+                width: 78%;
+            }
+
+            33% {
+                width: 0;
+            }
+
+            49% {
+                width: 55%;
+            }
+
+            54% {
+                width: 55%;
+            }
+
+            66% {
+                width: 0;
+            }
+
+            83% {
+                width: 87%;
+            }
+
+            88% {
+                width: 87%
+            }
+
+            99% {
+                width: 0;
+            }
+
+            100% {
+                width: 0;
+            }
+        }
+
+        .pais {
+            position: absolute;
+            font-size: 70px;
+
+            visibility: hidden;
+            animation: txt1 10s linear infinite;
+        }
+
+        @keyframes txt1 {
+            0% {
+                visibility: visible;
+            }
+
+            33% {
+                visibility: visible;
+            }
+
+            33.1% {
+                visibility: hidden;
+            }
+
+            100% {
+                visibility: hidden;
+            }
+        }
+
+        .hs {
+            position: absolute;
+            font-size: 70px;
+            visibility: hidden;
+            animation: txt2 10s linear infinite;
+        }
+
+        @keyframes txt2 {
+            0% {
+                visibility: hidden;
+            }
+
+            33.2% {
+                visibility: hidden;
+            }
+
+            33.3% {
+                visibility: visible;
+            }
+
+            66% {
+                visibility: hidden;
+            }
+
+            100% {
+                visibility: hidden;
+            }
+        }
+
+        .dm {
+            position: absolute;
+            font-size: 70px;
+            visibility: hidden;
+            animation: txt3 10s linear infinite;
+        }
+
+        @keyframes txt3 {
+            0% {
+                visibility: hidden;
+            }
+
+            66.1% {
+                visibility: hidden;
+            }
+
+            66.2% {
+                visibility: visible;
+            }
+
+            100% {
+                visibility: hidden;
+            }
+        }
+
+        .paragraph {
+            text-align: center;
+            color: white;
+            margin-top: -100px;
+            line-height: 25px;
+            font-size: 120%;
+        }
+
+        .btn3 {
+            height: 55px;
+            width: 150px;
+            border-radius: 2px;
+            border: none;
+            margin-left: 440px;
+            margin-top: 30px;
+            font-size: 110%;
+            background-color: rgb(12, 90, 219);
+            color: white;
+            cursor: pointer;
+
+        }
+
+        .btn1 {
+            height: 55px;
+            width: 180px;
+            border-radius: 2px;
+            border: none;
+            margin-left: 20px;
+            font-size: 110%;
+            background-color: rgb(12, 90, 219);
+            color: white;
+            cursor: pointer;
+        }
+
+        .btn3:hover {
+            background-color: white;
+            color: rgb(12, 90, 219);
+        }
+
+        .btn1:hover {
+            background-color: white;
+            color: rgb(12, 90, 219);
+        }
+
+        .section1 {
+            height: 180vh;
+            width: 100%;
+            background-color: white;
+            position: relative;
+            padding: 1px;
+        }
+
+        .one5 {
+            height: 410px;
+            width: 370px;
+            border-radius: 3px;
+            margin-left: 70px;
+            position: absolute;
+            z-index: 1;
+            margin-top: -110px;
+            display: inline-block;
+            vertical-align: top;
+            background-color: white;
+            transition: .34s;
+
+        }
+
+        .one5:hover {
+
+            margin-top: -120px;
+        }
+
+        .one6 {
+            height: 410px;
+            width: 370px;
+            border-radius: 3px;
+            margin-left: 460px;
+            position: absolute;
+            z-index: 1;
+            margin-top: -110px;
+            display: inline-block;
+            vertical-align: top;
+            background-color: rgb(12, 90, 219);
+        }
+
+        .one6:hover {
+            margin-top: -120px;
+        }
+
+        .one7 {
+            height: 410px;
+            width: 370px;
+            border-radius: 3px;
+            margin-left: 850px;
+            position: absolute;
+            z-index: 1;
+            margin-top: -110px;
+            display: inline-block;
+            vertical-align: top;
+            background-color: white;
+            transition: .34s;
+
+        }
+
+        .one7:hover {
+            margin-top: -120px;
+        }
+
+        .circle {
+            height: 120px;
+            width: 120px;
+            border-radius: 100%;
+            margin-left: 120px;
+            margin-top: 40px;
+            background-color: rgb(237, 244, 252);
+
+        }
+
+        .circlee {
+            height: 120px;
+            width: 120px;
+            border-radius: 100%;
+            margin-left: 120px;
+            margin-top: 40px;
+            background-color: rgb(237, 244, 252);
+
+        }
+
+        .one8 {
+            text-align: center;
+            margin-top: 30px;
+            color: rgba(0, 0, 0, 0.797);
+        }
+
+        .one5:hover .one8 {
+            color: white;
+        }
+
+        .one5:hover .one9 {
+            color: white;
+        }
+
+        .one5:hover .one10 {
+            color: white;
+        }
+
+        .one7:hover .one8 {
+            color: white;
+        }
+
+        .one7:hover .one9 {
+            color: white;
+        }
+
+        .one7:hover .one10 {
+            color: white;
+        }
+
+        .one9 {
+            text-align: center;
+            margin-top: 20px;
+            line-height: 25px;
+            color: rgba(97, 97, 97, 0.913);
+        }
+
+        .one10 {
+            text-align: center;
+            color: rgb(12, 90, 219);
+            margin-top: 40px;
+            font-size: 90%;
+            cursor: pointer;
+
+        }
+
+        .one11 {
+            margin-left: 5px;
+            font-size: 80%;
+            cursor: pointer;
+        }
+
+        .one5:hover {
+            background-color: rgb(12, 90, 219);
+            color: white;
+        }
+
+        .one7:hover {
+            background-color: rgb(12, 90, 219);
+            color: white;
+        }
+
+        .one12 {
+            text-align: center;
+            margin-top: 30px;
+            color: white;
+        }
+
+        .one13 {
+            text-align: center;
+            margin-top: 20px;
+            line-height: 25px;
+            color: white;
+        }
+
+        .one14 {
+            text-align: center;
+            color: white;
+            margin-top: 40px;
+            font-size: 90%;
+            cursor: pointer;
+
+        }
+
+        .one15 {
+            font-weight: lighter;
+        }
+
+        .one16 {
+            height: 85vh;
+            width: 48%;
+            margin-top: 75vh;
+            margin-left: 55px;
+            background-image: url(https://wp.dreamitsolution.net/techno/wp-content/uploads/2020/11/about-video-img2.png);
+            background-position: center;
+            background-size: cover;
+            display: inline-block;
+            vertical-align: top;
+        }
+
+        .icon {
+            height: 80px;
+            width: 80px;
+            border-radius: 50%;
+            background-color: white;
+            position: relative;
+            margin-left: 260px;
+            margin-top: 220px;
+        }
+
+        .icon1 {
+            height: 100%;
+            width: 100%;
+            border-radius: 50%;
+            background-color: white;
+            position: absolute;
+            z-index: 1;
+        }
+
+        .one17 {
+            margin-left: 38%;
+            margin-top: 30%;
+            font-size: 35px;
+        }
+
+        .scale {
+            height: 100%;
+            width: 100%;
+            background-color: rgb(255, 255, 255);
+            border-radius: 100%;
+            position: absolute;
+            top: 0;
+            animation: scale 2s infinite linear;
+        }
+
+        @keyframes scale {
+            0% {
+                opacity: 0.5;
+                transform: scale(1);
+            }
+
+            100% {
+                opacity: 0;
+                transform: scale(1.3);
+
+
+            }
+        }
+
+        .scale1 {
+            height: 100%;
+            width: 100%;
+            background-color: rgb(255, 255, 255);
+            border-radius: 100%;
+            position: absolute;
+            top: 0;
+            animation: scale1 2s infinite linear;
+        }
+
+        .scale2 {
+            height: 100%;
+            width: 100%;
+            background-color: rgba(255, 255, 255, 0.998);
+            border-radius: 100%;
+            position: absolute;
+            top: 0;
+            animation: scale2 2s infinite linear;
+        }
+
+        @keyframes scale1 {
+            0% {
+                opacity: 0.5;
+                transform: scale(1);
+            }
+
+            100% {
+                opacity: 0;
+                transform: scale(1.5);
+
+
+            }
+        }
+
+        @keyframes scale2 {
+            0% {
+                opacity: 0.5;
+                transform: scale(1);
+            }
+
+            100% {
+                opacity: 0;
+                transform: scale(1.8);
+
+
+            }
+        }
+
+        .one18 {
+            height: 85vh;
+            width: 45%;
+            margin-top: -100vh;
+            margin-left: 54%;
+
+        }
+
+        .one19 {
+            font-size: 140px;
+            color: rgb(12, 90, 219);
+
+        }
+
+        .one20 {
+            margin-left: 190px;
+            margin-top: -140px;
+            font-size: 220%;
+
+        }
+
+        .one21 {
+            color: rgba(0, 0, 0, 0.692);
+            line-height: 25px;
+            margin-top: 30px;
+            font-size: 115%;
+        }
+
+        .one22 {
+            height: 50px;
+            width: 190px;
+            border: none;
+            font-size: 110%;
+            border-radius: 3px;
+            margin-top: 30px;
+            color: white;
+            background-color: rgb(12, 90, 219);
+            cursor: pointer;
+        }
+
+        .one22:hover {
+            background-color: rgb(5, 5, 141);
+            color: white;
+        }
+
+        .fb {
+            font-size: 60px;
+            margin-left: 35px;
+            margin-top: 30px;
+        }
+
+        .section2 {
+            height: 220vh;
+            width: 100%;
+            padding: 1px;
+            background-color: rgb(58, 58, 58);
+        }
+
+        .two1 {
+            text-align: center;
+            color: white;
+            margin-top: 90px;
+            font-weight: lighter;
+            font-size: 110%;
+            letter-spacing: 2px;
+        }
+
+        .two2 {
+            text-align: center;
+            color: white;
+            margin-top: 20px;
+            font-size: 40px;
+        }
+
+        .two3 {
+            height: 5px;
+            width: 100px;
+            border-radius: 20px;
+            background-color: #fcfcfc;
+            margin-left: 580px;
+            margin-top: 20px;
+            padding: 1px;
+        }
+
+        .two4 {
+            height: 10px;
+            width: 10px;
+            border-radius: 50%;
+            background-color: red;
+            margin-top: -3px;
+            margin-left: -2px;
+            animation: fade 3s linear infinite;
+        }
+
+        @keyframes fade {
+            from {
+                margin-left: -2px;
+            }
+
+            to {
+                margin-left: 100%;
+            }
+
+        }
+
+        .two5 {
+            height: 320px;
+            width: 100%;
+            margin-top: 60px;
+        }
+
+        .two6 {
+            height: 100%;
+            width: 365px;
+            margin-left: 70px;
+            border-radius: 5px;
+            display: inline-block;
+            vertical-align: top;
+            padding: 1px;
+            background-color: rgb(49, 49, 49);
+            transition: .34s;
+        }
+
+        .two6:hover {
+            background-color: rgb(12, 90, 219);
+            margin-top: -20px;
+
+        }
+
+        .two7 {
+            height: 100%;
+            width: 350px;
+            margin-left: 20px;
+            border-radius: 5px;
+            display: inline-block;
+            vertical-align: top;
+            padding: 1px;
+            background-color: rgb(49, 49, 49);
+            transition: .34s;
+        }
+
+        .two7:hover {
+            background-color: rgb(12, 90, 219);
+            margin-top: -20px;
+
+        }
+
+        .two8 {
+            height: 100%;
+            width: 350px;
+            margin-left: 20px;
+            border-radius: 5px;
+            display: inline-block;
+            vertical-align: top;
+            padding: 1px;
+            background-color: rgb(49, 49, 49);
+            transition: .34s;
+        }
+
+        .two8:hover {
+            background-color: rgb(12, 90, 219);
+            margin-top: -20px;
+
+        }
+
+        .two9 {
+            height: 350px;
+            width: 100%;
+            margin-top: 40px;
+        }
+
+        .two10 {
+            height: 50px;
+            width: 50px;
+            margin-left: 25px;
+            margin-top: 40px;
+        }
+
+        .two11 {
+            margin-left: 25px;
+            color: white;
+            margin-top: 20px;
+        }
+
+        .two12 {
+            margin-left: 25px;
+            line-height: 30px;
+            margin-top: 20px;
+            color: rgba(255, 255, 255, 0.806);
+            font-size: 105%;
+
+        }
+
+        .two13 {
+            margin-top: 20px;
+            margin-left: 25px;
+            color: rgba(255, 255, 255, 0.943);
+            font-size: 105%;
+
+        }
+
+        .section3 {
+            height: 140vh;
+            width: 100%;
+            background-color: white;
+            padding: 1px;
+            position: relative;
+        }
+
+        .three {
+            height: 43vh;
+            width: 90%;
+            margin-left: 5%;
+            border-radius: 10px;
+            background-color: rgb(12, 90, 219);
+            position: absolute;
+            z-index: 1;
+            margin-top: -120px;
+
+        }
+
+        .three1 {
+            height: 70%;
+            width: 20%;
+            display: inline-block;
+            vertical-align: top;
+            margin-top: 50px;
+            margin-left: 10%;
+        }
+
+        .three2 {
+            height: 70%;
+            width: 20%;
+            display: inline-block;
+            vertical-align: top;
+            margin-top: 50px;
+            margin-left: 3%;
+        }
+
+        .three3 {
+            height: 70%;
+            width: 20%;
+            display: inline-block;
+            vertical-align: top;
+            margin-top: 50px;
+            margin-left: 3%;
+        }
+
+        .three4 {
+            height: 70%;
+            width: 20%;
+            display: inline-block;
+            vertical-align: top;
+            margin-top: 50px;
+            margin-left: 2%;
+        }
+
+        .three5 {
+            color: white;
+            font-size: 40px;
+            margin-top: 50px;
+            margin-left: 20px;
+        }
+
+        .three6 {
+            color: white;
+            margin-top: 20px;
+            font-size: 130%;
+        }
+
+        .four {
+            color: rgb(6, 83, 206);
+            letter-spacing: 2px;
+            margin-left: 50px;
+            margin-top: 230px;
+            font-size: 110%;
+
+
+        }
+
+        .four1 {
+            margin-left: 50px;
+            margin-top: 15px;
+            font-size: 40px;
+        }
+
+        .four2 {
+            height: 5px;
+            width: 100px;
+            border-radius: 20px;
+            background-color: rgb(103, 149, 248);
+            margin-left: 50px;
+            margin-top: 20px;
+            padding: 1px;
+        }
+
+        .four3 {
+            height: 10px;
+            width: 10px;
+            border-radius: 50%;
+            background-color: rgb(5, 5, 141);
+            margin-top: -3px;
+            margin-left: -2px;
+            animation: fade 3s linear infinite;
+        }
+
+        @keyframes fade {
+            from {
+                margin-left: -2px;
+            }
+
+            to {
+                margin-left: 100%;
+            }
+        }
+
+        .button {
+            height: 50px;
+            width: 200px;
+            background-color: rgb(12, 90, 219);
+            color: white;
+            border-radius: 4px;
+            margin-left: 1000px;
+            margin-top: -70px;
+            font-size: 110%;
+            padding: 1px;
+
+        }
+
+        .btn6 {
+            text-align: center;
+            margin-top: 15px;
+            cursor: pointer;
+        }
+
+        .button:hover {
+            background-color: rgb(5, 5, 100);
+        }
+
+        .animation {
+            height: 70vh;
+            width: 100%;
+            margin-top: 60px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .child {
+            height: 100%;
+            width: 200%;
+            display: inline-block;
+            vertical-align: top;
+            position: absolute;
+            animation: animation 15s linear infinite;
+        }
+
+        .image {
+            height: 100%;
+            width: 12.5%;
+            display: inline-block;
+            vertical-align: top;
+            margin-left: -5px;
+            position: relative;
+            overflow: hidden;
+        }
+        .overlay{
+            height: 100%;
+            width: 100%;
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            transition: .1s;
+        }
+        .image:hover .overlay{
+            background-color: rgba(7, 7, 253, 0.592);
+            transform: scale(1.1);
+        }
+        
+        .seven{
+            height: 150px;
+            width: 200px;
+            border-radius: 5px;
+            margin-top: 160px;
+            margin-left: 60px;
+            background-color: white;
+            position: absolute; 
+            opacity: 0;
+            transition: .2s;
+        }
+        .image:hover .seven{
+            opacity: 1;
+            margin-top: 140px;
+        }
+        .seven1{
+            text-align: center;
+            margin-top: 30px;
+            font-size: 120%;
+            font-weight: bold;
+            
+        }
+        .seven2{
+            text-align: center;
+            margin-top: 15px;
+            color: rgb(12, 102, 245);
+        }
+        
+
+        .image:nth-child(1) {
+            margin-left: 0;
+        }
+
+        .image img {
+            height: 100%;
+            width: 100%;
+        }
+
+        @keyframes animation {
+            0% {
+                margin-left: 0;
+            }
+
+            20% {
+                margin-left: 0;
+
+            }
+
+            21% {
+                margin-left: -25%;
+
+            }
+
+            40% {
+                margin-left: -25%;
+
+            }
+
+            41% {
+                margin-left: -50%;
+
+            }
+
+            60% {
+                margin-left: -50%;
+
+            }
+
+            61% {
+                margin-left: -75%;
+
+            }
+
+            80% {
+                margin-left: -75%
+            }
+
+            81% {
+                margin-left: -100%;
+            }
+
+            100% {
+                margin-left: -100%;
+
+            }
+        }
+
+        .section4 {
+            height: 110vh;
+            width: 100%;
+            padding: 1px;
+        }
+
+        .ten {
+            text-align: center;
+            font-size: 110%;
+            margin-top: 120px;
+            color: rgb(12, 102, 245);
+            letter-spacing: 2px;
+        }
+
+        .ten1 {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 40px;
+        }
+
+        .ten2 {
+            height: 5px;
+            width: 100px;
+            border-radius: 20px;
+            background-color: rgb(103, 149, 248);
+            margin-left: 560px;
+            margin-top: 30px;
+            padding: 1px;
+        }
+
+        .ten3 {
+            height: 10px;
+            width: 10px;
+            border-radius: 50%;
+            background-color: rgb(5, 5, 141);
+            margin-top: -3px;
+            margin-left: -2px;
+            animation: fade 3s linear infinite;
+        }
+
+        .ten4 {
+            height: 40px;
+            width: 40px;
+            border-radius: 50%;
+            margin-top: 40px;
+            background-color: blue;
+            position: relative;
+            margin-left: 20px;
+        }
+
+        .ten4:hover {
+            transform: scale(1.1);
+            transition: .34s;
+
+        }
+
+        .ten5 {
+            height: 100%;
+            width: 100%;
+            border-radius: 50%;
+            color: white;
+            padding: 1px;
+            position: absolute;
+            z-index: 111;
+        }
+
+        .ten6 {
+            margin-left: 13px;
+            margin-top: 8px;
+            font-size: 120%;
+        }
+
+        .ten7 {
+            height: 100%;
+            width: 100%;
+            border-radius: 50%;
+            top: 0;
+            background-color: rgb(12, 102, 245);
+            position: absolute;
+            transform: scale(1.6);
+            opacity: 0.5;
+        }
+
+        .ten8 {
+            height: 100%;
+            width: 100%;
+            border-radius: 50%;
+            top: 0;
+            background-color: rgb(12, 102, 245);
+            position: absolute;
+            z-index: 1;
+            transform: scale(2);
+            opacity: 0.3;
+        }
+
+        .nine {
+            font-size: 50px;
+        }
+
+        .ten10 {
+            color: rgb(12, 102, 245);
+        }
+
+        .ten11 {
+            height: 15vh;
+            width: 360px;
+            margin-top: 40px;
+            margin-left: 180px;
+            display: inline-block;
+            vertical-align: top;
+        }
+
+        .ten9 {
+            margin-left: 110px;
+            margin-top: -30px;
+            width: max-content;
+        }
+
+        .ten12 {
+            height: 15vh;
+            width: 650px;
+            margin-top: 40px;
+            margin-left: 30px;
+            display: inline-block;
+            vertical-align: top;
+        }
+
+        .ten13 {
+            height: 40px;
+            width: 40px;
+            border-radius: 50%;
+            margin-top: -30px;
+            background-color: blue;
+            position: relative;
+            margin-left: 390px;
+        }
+
+        .ten13:hover {
+            transform: scale(1.1);
+            transition: .34s;
+        }
+
+        .ten14 {
+            height: 40vh;
+            width: 1200px;
+            margin-top: 40px;
+            margin-left: px;
+        }
+
+        .ten15 {
+            height: 100%;
+            width: 33%;
+            display: inline-block;
+            vertical-align: top;
+        }
+
+        .ten16 {
+            margin-top: 10px;
+            margin-left: 150px;
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        .ten17 {
+
+            margin-top: 20px;
+            color: rgb(104, 104, 104);
+            line-height: 25px;
+            text-align: center;
+            margin-left: 60px;
+
+        }
+
+        .ten18 {
+            margin-top: 10px;
+            margin-left: 120px;
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        .ten19 {
+
+            margin-top: 20px;
+            color: rgb(104, 104, 104);
+            line-height: 25px;
+            text-align: center;
+
+        }
+
+        .section5 {
+            height: 150vh;
+            width: 100%;
+            background-image: url(https://wp.dreamitsolution.net/techno/wp-content/uploads/2020/11/slider03.jpg);
+            background-position: center;
+            background-size: cover;
+            padding: 1px;
+            background-attachment: fixed;
+        }
+
+        .ten20 {
+            color: white;
+            margin-top: 100px;
+            letter-spacing: 3px;
+            text-align: center;
+            font-weight: bold;
+            font-size: 110%;
+
+        }
+
+        .ten21 {
+            color: white;
+            text-align: center;
+            margin-top: 20px;
+            font-size: 40px;
+        }
+
+        .ten22 {
+            height: 5px;
+            width: 100px;
+            border-radius: 20px;
+            background-color: gainsboro;
+            margin-left: 580px;
+            margin-top: 20px;
+            padding: 1px;
+        }
+
+        .ten23 {
+            height: 10px;
+            width: 10px;
+            border-radius: 50%;
+            background-color: rgb(12, 102, 245);
+            margin-top: -3px;
+            margin-left: -2px;
+            animation: fade 3s linear infinite;
+        }
+
+        .ten24 {
+            height: 230px;
+            width: 350px;
+            background-color: white;
+            border-radius: 5px;
+            margin-top: 100px;
+            margin-left: 80px;
+            display: inline-block;
+            vertical-align: top;
+        }
+
+        .ten25 {
+            height: 230px;
+            width: 350px;
+            background-color: white;
+            border-radius: 5px;
+            margin-top: 100px;
+            margin-left: 20px;
+            display: inline-block;
+            vertical-align: top;
+        }
+
+        .ten26 {
+            height: 230px;
+            width: 350px;
+            background-color: white;
+            border-radius: 5px;
+            margin-top: 100px;
+            margin-left: 20px;
+            display: inline-block;
+            vertical-align: top;
+        }
+
+        .ten27 {
+            margin-left: 30px;
+            margin-top: 40px;
+            line-height: 25px;
+            color: rgb(104, 104, 104);
+        }
+
+        .ten28 {
+            height: 110px;
+            width: 350px;
+            margin-top: 40px;
+            margin-left: 80px;
+            display: inline-block;
+            vertical-align: top;
+        }
+
+        .ten29 {
+            height: 130px;
+            width: 350px;
+            margin-top: 40px;
+            margin-left: 20px;
+            display: inline-block;
+            vertical-align: top;
+        }
+
+        .ten30 {
+            height: 130px;
+            width: 350px;
+            margin-top: 40px;
+            margin-left: 20px;
+            display: inline-block;
+            vertical-align: top;
+        }
+
+        .ten31 {
+            height: 90px;
+            width: 90px;
+            border-radius: 50px;
+            background-image: url(./images/testi2.jpg);
+            background-position: center;
+            background-size: cover;
+
+        }
+
+        .ten40 {
+            height: 90px;
+            width: 90px;
+            border-radius: 50px;
+            background-image: url(./images/testi3.jpg);
+            background-position: center;
+            background-size: cover;
+
+        }
+
+        .ten32 {
+            height: 20px;
+            width: 20px;
+            margin-left: 110px;
+            margin-top: -80px;
+            display: inline-block;
+            vertical-align: top;
+        }
+
+        .ten33 {
+            height: 20px;
+            width: 20px;
+            margin-left: 3px;
+            margin-top: -80px;
+            display: inline-block;
+            vertical-align: top;
+        }
+
+        .ten34 {
+            height: 20px;
+            width: 20px;
+            margin-left: 3px;
+            margin-top: -80px;
+            display: inline-block;
+            vertical-align: top;
+        }
+
+        .ten35 {
+            height: 20px;
+            width: 20px;
+            margin-left: 3px;
+            margin-top: -80px;
+            display: inline-block;
+            vertical-align: top;
+        }
+
+        .ten36 {
+            height: 20px;
+            width: 20px;
+            margin-left: 3px;
+            margin-top: -80px;
+            display: inline-block;
+            vertical-align: top;
+        }
+
+        .ten37 {
+            font-size: 18px;
+        }
+
+        .ten38 {
+            margin-left: 110px;
+            font-size: 130%;
+            margin-top: -70px;
+            color: white;
+        }
+
+        .ten39 {
+            color: white;
+            margin-left: 110px;
+            margin-top: 10px;
+            font-size: 105%;
+        }
+
+        .section6 {
+            height: 160vh;
+            width: 100%;
+            padding: 1px;
+        }
+
+        .ten50 {
+            height: 700px;
+            width: 600px;
+            margin-top: 9%;
+            margin-left: 5%;
+            background-image: url(./images/video-img3.png);
+            background-position: center;
+            background-size: cover;
+            display: inline-block;
+            vertical-align: top;
+        }
+
+        .ten51 {
+            height: 700px;
+            width: 540px;
+            margin-left: 30px;
+            display: inline-block;
+            vertical-align: top;
+            margin-top: 9%;
+
+        }
+
+        .ten52 {
+            letter-spacing: 3px;
+            margin-top: 110px;
+            color: rgb(12, 102, 245);
+            font-weight: bold;
+        }
+
+        .ten53 {
+            margin-top: 10px;
+            font-size: 40px;
+        }
+
+        .ten54 {
+            height: 5px;
+            width: 100px;
+            border-radius: 20px;
+            background-color: gainsboro;
+            margin-top: 20px;
+            padding: 1px;
+        }
+
+        .ten55 {
+            height: 10px;
+            width: 10px;
+            border-radius: 50%;
+            background-color: rgb(12, 102, 245);
+            margin-top: -3px;
+            margin-left: -2px;
+            animation: fade 3s linear infinite;
+        }
+
+        .ten56 {
+            margin-top: 35px;
+            color: rgb(104, 104, 104);
+            font-size: 110%;
+            line-height: 25px;
+        }
+
+        .ten57 {
+            margin-top: 30px;
+            font-size: 120%;
+            display: inline-block;
+            vertical-align: top;
+        }
+
+        .ten58 {
+            height: 5px;
+            width: 520px;
+            background-color: gainsboro;
+            margin-top: 5px;
+            border-radius: 5px;
+            position: relative;
+        }
+
+        .ten59 {
+            height: 6px;
+            width: 0%;
+            background-color: rgb(12, 102, 245);
+            animation: animations 1s linear 1s forwards;
+            position: absolute;
+        }
+
+        @keyframes animations {
+            from {
+                width: 0;
+            }
+
+            to {
+                width: 90%;
+            }
+        }
+
+        .ten60 {
+            height: 20px;
+            width: 35px;
+            display: inline-block;
+            vertical-align: top;
+            margin-top: 30px;
+            margin-left: 10px;
+            position: absolute;
+            /* animation: percentage 1s linear 1s; */
+
+        }
+        @keyframes percentage{
+            from{
+                left: 0;
+            }
+            to{
+                right: 90%;
+            }
+        }
+
+
+        .ten61 {
+            margin-top: 50px;
+            font-size: 120%;
+            display: inline-block;
+            vertical-align: top;
+        }
+
+        .ten63 {
+            height: 5px;
+            width: 520px;
+            background-color: gainsboro;
+            margin-top: 5px;
+            border-radius: 5px;
+            position: relative;
+        }
+
+        .ten64 {
+            height: 6px;
+            width: 90%;
+            background-color: rgb(12, 102, 245);
+            animation: animation1 1s linear 1s forwards;
+            position: absolute;
+        }
+
+        @keyframes animation1 {
+            from {
+                width: 0;
+            }
+
+            to {
+                width: 96%;
+            }
+        }
+
+        .ten62 {
+            height: 20px;
+            width: 35px;
+            display: inline-block;
+            vertical-align: top;
+            margin-top: 50px;
+            position: absolute;
+            margin-left: 10px;
+            /* animation: percentage 1s linear 1s; */
+
+        }
+
+        .ten65 {
+            margin-top: 50px;
+            font-size: 120%;
+            display: inline-block;
+            vertical-align: top;
+        }
+
+        .ten67 {
+            height: 5px;
+            width: 520px;
+            background-color: gainsboro;
+            margin-top: 5px;
+            border-radius: 5px;
+            position: relative;
+        }
+
+        .ten68 {
+            height: 6px;
+            width: 90%;
+            background-color: rgb(12, 102, 245);
+            animation: animation2 1s linear 1s forwards;
+            position: absolute;
+        }
+
+        @keyframes animation2 {
+            from {
+                width: 0;
+            }
+
+            to {
+                width: 70%;
+            }
+        }
+
+        .ten66 {
+            height: 20px;
+            width: 35px;
+            margin-left: 10px;
+            display: inline-block;
+            vertical-align: top;
+            margin-top: 50px;
+            position: absolute;
+            /* animation: percentage 1s linear 1s; */
+
+        }
+
+        .section7 {
+            height: 140vh;
+            width: 100%;
+            background-color: rgb(237, 244, 252);
+            background-position: center;
+            background-size: cover;
+            padding: 1px;
+        }
+
+        .paragraphh {
+            margin-top: 90px;
+            font-weight: bold;
+            letter-spacing: 3px;
+            color: rgb(12, 102, 245);
+            margin-left: 70px;
+        }
+
+        .six {
+            margin-left: 70px;
+            margin-top: -100px;
+            font-size: 40px;
+
+        }
+
+        .six1 {
+            height: 5px;
+            width: 100px;
+            border-radius: 20px;
+            margin-left: 70px;
+            background-color: gainsboro;
+            margin-top: 20px;
+            padding: 1px;
+        }
+
+        .six2 {
+            height: 10px;
+            width: 10px;
+            border-radius: 50%;
+            background-color: rgb(12, 102, 245);
+            margin-top: -3px;
+            margin-left: -2px;
+            animation: fade 3s linear infinite;
+        }
+
+        .six3 {
+            height: 50px;
+            border-radius: 5px;
+            border: none;
+            width: 160px;
+            background-color: rgb(12, 102, 245);
+            color: white;
+            font-size: 110%;
+            margin-left: 1050px;
+            margin-top: 70px;
+            cursor: pointer;
+        }
+
+        .six3:hover {
+            background-color: rgb(5, 5, 143);
+        }
+
+        .six4 {
+            height: 390px;
+            width: 350px;
+            margin-top: 40px;
+            margin-left: 75px;
+            display: inline-block;
+            vertical-align: top;
+            background-color: white;
+        }
+
+        .six5 {
+            height: 390px;
+            width: 350px;
+            margin-top: 40px;
+            margin-left: 25px;
+            display: inline-block;
+            vertical-align: top;
+            background-color: white;
+        }
+
+        .six6 {
+            height: 390px;
+            width: 350px;
+            margin-top: 40px;
+            margin-left: 25px;
+            display: inline-block;
+            vertical-align: top;
+            background-color: white;
+
+        }
+
+        .six7 {
+            height: 65%;
+            width: 100%;
+            background-image: url(./images/blog06-390x290.jpg);
+            background-position: center;
+            background-size: cover;
+        }
+
+        .six8 {
+            margin-top: 30px;
+            margin-left: 30px;
+            font-size: 90%;
+            color: rgb(85, 83, 83);
+            display: inline-block;
+            vertical-align: top;
+
+        }
+
+        .six9 {
+            display: inline-block;
+            vertical-align: top;
+            margin-top: 30px;
+            font-size: 90%;
+            color: rgb(85, 83, 83);
+            margin-left: 20px;
+
+
+        }
+
+        .six10 {
+            margin-left: 30px;
+            margin-top: 10px;
+            font-size: 20px;
+        }
+
+        .six11 {
+            height: 65%;
+            width: 100%;
+            background-image: url(./images/blog1-390x290.jpg);
+            background-position: center;
+            background-size: cover;
+        }
+
+        .six12 {
+            height: 65%;
+            width: 100%;
+            background-image: url(./images/blog01-390x290.jpg);
+            background-position: center;
+            background-size: cover;
+        }
+
+        .section8 {
+            height: 43vh;
+            width: 100%;
+            padding: 1px;
+            background-color: rgb(12, 90, 219);
+        }
+
+        .six13 {
+            text-align: center;
+            color: white;
+            margin-top: 50px;
+        }
+        .six50{
+            height: 90px;
+            width: 800px;
+            margin-top: 30px;
+            margin-left: 230px;
+            padding: 1px;
+            position: relative;
+        }
+        .six51{
+            height: 55px;
+            width: 150px;
+            background-color: rgb(12, 102, 245);
+            border: none;
+            color: white;
+            border-radius: 10px;
+            font-size: 110%;
+            position: absolute;
+            margin-left: 615px;
+            margin-top: 5px;
+        }
+
+        .six14 {
+            height: 65px;
+            width: 750px;
+            background-color: white;
+            border-radius: 15px;
+            margin-top: px;
+            margin-left: 20px;
+            border: none;
+            font-size: 110%;
+            padding-left: 20px;
+            
+
+        }
+
+        .six15 {
+            height: 55px;
+            width: 120px;
+            background-color: rgb(12, 90, 219);
+        }
+
+        .section9 {
+            height: 100vh;
+            width: 100%;
+            padding: 1px;
+            background-image: url(./images/footer-threee.jpg);
+            background-size: cover;
+            background-position: center;
+        }
+
+        .six16 {
+            height: 350px;
+            width: 270px;
+            margin-top: 120px;
+            margin-left: 70px;
+            padding: 1px;
+            display: inline-block;
+            vertical-align: top;
+        }
+
+        .six20 {
+            height: 40px;
+            width: 200px;
+            background-image: url(./images/logo2-1.png);
+            background-position: center;
+            background-size: cover;
+
+        }
+
+        .six21 {
+            color: rgba(255, 255, 255, 0.907);
+            margin-top: 20px;
+            line-height: 25px;
+        }
+
+        .six22 {
+            color: white;
+            margin-top: 30px;
+            font-weight: bold;
+            font-size: 120%;
+        }
+
+        .six23 {
+            height: 40px;
+            width: 40px;
+            margin-top: 30px;
+            background-color: rgb(12, 90, 219);
+            display: inline-block;
+            vertical-align: top;
+            border-radius: 5px;
+            cursor: pointer;
+
+        }
+
+        .six24 {
+            height: 40px;
+            width: 40px;
+            margin-top: 30px;
+            margin-left: 10px;
+            background-color: rgb(12, 90, 219);
+            display: inline-block;
+            vertical-align: top;
+            border-radius: 5px;
+            cursor: pointer;
+
+        }
+
+        .six25 {
+            font-size: 20px;
+            margin-left: 10px;
+            margin-top: 10px;
+        }
+
+        .six17 {
+            height: 350px;
+            width: 200px;
+            display: inline-block;
+            vertical-align: top;
+            margin-top: 120px;
+        }
+
+        .six26 {
+            color: white;
+            font-size: 25px;
+            margin-top: 10px;
+        }
+
+        .six27 {
+            color: white;
+            list-style: none;
+            margin-top: 20px;
+            margin-left: 5px;
+        }
+
+        .six18 {
+            color: white;
+            height: 350px;
+            width: 350px;
+            margin-top: 120px;
+            margin-left: 50px;
+            display: inline-block;
+            vertical-align: top;
+
+
+        }
+
+        .six28 {
+            color: white;
+            margin-top: 10px;
+
+        }
+
+        .six29 {
+            height: 80px;
+            width: 80px;
+            margin-top: 30px;
+            background-image: url(https://techno.dreamitsolution.net/wp-content/uploads/2020/10/blog06-80x80.jpg);
+            background-position: center;
+            background-size: cover;
+            display: inline-block;
+            vertical-align: top;
+            cursor: pointer;
+        }
+
+        .six30 {
+            color: white;
+            display: inline-block;
+            vertical-align: top;
+            margin-top: 30px;
+            margin-left: 20px;
+            font-size: 100%;
+            cursor: pointer;
+        }
+
+        .six31 {
+            margin-left: 100px;
+            margin-top: -30px;
+            color: rgba(114, 143, 238, 0.864);
+        }
+
+        .six32 {
+            width: 80%;
+            margin-top: 30px;
+            border: 1px solid rgba(245, 245, 245, 0.673);
+
+        }
+
+        .six33 {
+            height: 80px;
+            width: 80px;
+            margin-top: 30px;
+            background-image: url(https://techno.dreamitsolution.net/wp-content/uploads/2020/10/blog1-80x80.jpg);
+            background-position: center;
+            background-size: cover;
+            display: inline-block;
+            vertical-align: top;
+            cursor: pointer;
+        }
+
+        .six19 {
+            height: 350px;
+            width: 250px;
+            display: inline-block;
+            vertical-align: top;
+            margin-top: 120px;
+            margin-left: 10px;
+            cursor: pointer;
+
+        }
+
+        .six34 {
+            height: 40px;
+            width: 40px;
+            border-radius: 50%;
+            margin-top: 30px;
+            display: inline-block;
+            vertical-align: top;
+            background-color: rgba(114, 143, 238, 0.864);
+        }
+
+        .six35 {
+            color: white;
+            display: inline-block;
+            vertical-align: top;
+            margin-top: 30px;
+            margin-left: 10px;
+        }
+
+        .six36 {
+            color: rgba(114, 143, 238, 0.864);
+            margin-left: 50px;
+            margin-top: -5px;
+        }
+
+        .six37 {
+            margin-left: 12px;
+            margin-top: 10px;
+        }
+        .six40{
+            width: 90%;
+            border: 1px solid rgb(12, 102, 245);
+            margin-left: 5%;
+            margin-top: 20px;
+        }
+        .six41{
+            color: white;
+            margin-left: 70px;
+            margin-top: 30px;
+            display: inline-block;
+            vertical-align: top;
+        }
+        .six42{
+            display: inline-block;
+            vertical-align:top ;
+            margin-left: 420px;
+            margin-top: 40px;
+
+        }
+        .six43{
+            color: white;
+            list-style: none;
+            display: inline;
+            margin-left: 40px;
+            
+        }
+        .heading{
+            border-right: 1px solid white;
+            height: 100px;
+            margin-top: -100px;
+            
+        }
+        
+
+
+
+    </style>
+</head>
+
+<body>
+    <div class="section">
+        <div class="logo">
+            <img src="./images/logo2-1.png" alt="">
+        </div>
+        <div class="navbar">
+            <ul>
+                <li class="navlist">Home<i class="fa-solid fa-angle-down arrowdown" style="color: #fcfcfc;"></i>
+                    <div class="dropdown">
+                        <div class="text">
+                            <ul>
+                                <li class="one">Main Demo</li>
+                                <li class="one">IT Solution (New)</li>
+                                <li class="one">Digital Agency (New)</li>
+                                <li class="one">Software & Startup(New)</li>
+                                <li class="one">Home SEO (New)</li>
+                                <li class="one">Insurance (New)</li>
+                                <li class="one">IT Solution Demo 02</li>
+                                <li class="one">IT Solution Demo 03</li>
+                                <li class="one">IT Solution Demo 04</li>
+                                <li class="one">IT Solution Demo 05</li>
+                            </ul>
+                        </div>
+                        <div class="text1">
+                            <ul>
+                                <li class="one">IT Solution Demo 06</li>
+                                <li class="one">IT Solution Demo 07</li>
+                                <li class="one">IT Solution Demo 08</li>
+                                <li class="one">IT Solution Demo 09</li>
+                                <li class="one">IT Solution Demo 10</li>
+                                <li class="one">IT Solution Demo 11</li>
+                                <li class="one">IT Solution Demo 12</li>
+                                <li class="one">IT Solution Demo 13</li>
+                                <li class="one">IT Solution Demo 14</li>
+                                <li class="one">IT Solution Demo 15</li>
+                            </ul>
+                        </div>
+                        <div class="text2">
+                            <ul>
+                                <li class="one">IT Solution Demo 06</li>
+                                <li class="one">IT Solution Demo 07</li>
+                                <li class="one">IT Solution Demo 08</li>
+                                <li class="one">IT Solution Demo 09</li>
+                                <li class="one">IT Solution Demo 10</li>
+                                <li class="one">IT Solution Demo 11</li>
+                                <li class="one">IT Solution Demo 12</li>
+                                <li class="one">IT Solution Demo 13</li>
+                                <li class="one">IT Solution Demo 14</li>
+                                <li class="one">IT Solution Demo 15</li>
+
+
+                            </ul>
+                        </div>
+                        <div class="text3">
+                            <ul>
+                                <li class="one">IT Solution Demo 06</li>
+                                <li class="one">IT Solution Demo 07</li>
+                                <li class="one">IT Solution Demo 08</li>
+                                <li class="one">IT Solution Demo 09</li>
+                                <li class="one">IT Solution Demo 10</li>
+                                <li class="one">IT Solution Demo 11</li>
+                                <li class="one">IT Solution Demo 12</li>
+                                <li class="one">IT Solution Demo 13</li>
+                                <li class="one">IT Solution Demo 14</li>
+                                <li class="one">IT Solution Demo 15</li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+                <li class="navlist">Company</li>
+                <li class="navlist">Services <i class="fa-solid fa-angle-down arrowdown" style="color: #fcfcfc;"></i>
+                    <div class="dropdown1">
+                        <ul>
+                            <li class="one1">IT Service</li>
+                            <li class="one1">Industries</li>
+                            <li class="one1">Buisness Solution</li>
+                            <li class="one1">Managed IT Services</li>
+                        </ul>
+                    </div>
+                </li>
+
+                <li class="navlist">Pages <i class="fa-solid fa-angle-down arrowdown" style="color: #fcfcfc;"></i>
+                    <div class="dropdown2">
+                        <div class="two">
+                            <ul>
+                                <li class="one3">About Us Style 01</li>
+                                <li class="one2">About Us Style 02</li>
+                                <li class="one2">About Us Style 03</li>
+                                <li class="one2">About Us Style 04</li>
+                                <li class="one2">About Us Style 05</li>
+                                <li class="one2">Why Choose Us</li>
+                            </ul>
+                        </div>
+                        <div class="two">
+                            <ul>
+                                <li class="one3">About Us Style 01</li>
+                                <li class="one2">About Us Style 02</li>
+                                <li class="one2">About Us Style 03</li>
+                                <li class="one2">About Us Style 04</li>
+                                <li class="one2">About Us Style 05</li>
+                                <li class="one2">Why Choose Us</li>
+                            </ul>
+                        </div>
+                        <div class="two">
+                            <ul>
+                                <li class="one3">About Us Style 01</li>
+                                <li class="one2">About Us Style 02</li>
+                                <li class="one2">About Us Style 03</li>
+                                <li class="one2">About Us Style 04</li>
+                                <li class="one2">About Us Style 05</li>
+                                <li class="one2">Why Choose Us</li>
+                            </ul>
+                        </div>
+                        <div class="two">
+                            <ul>
+                                <li class="one3">About Us Style 01</li>
+                                <li class="one2">About Us Style 02</li>
+                                <li class="one2">About Us Style 03</li>
+                                <li class="one2">About Us Style 04</li>
+                                <li class="one2">About Us Style 05</li>
+                                <li class="one2">Why Choose Us</li>
+                            </ul>
+                        </div>
+                        <div class="two">
+                            <ul>
+                                <li class="one3">About Us Style 01</li>
+                                <li class="one2">About Us Style 02</li>
+                                <li class="one2">About Us Style 03</li>
+                                <li class="one2">About Us Style 04</li>
+                                <li class="one2">About Us Style 05</li>
+                                <li class="one2">Why Choose Us</li>
+                            </ul>
+                        </div>
+                        <div class="two">
+                            <ul>
+                                <li class="one3">About Us Style 01</li>
+                                <li class="one2">About Us Style 02</li>
+                                <li class="one2">About Us Style 03</li>
+                                <li class="one2">About Us Style 04</li>
+                                <li class="one2">About Us Style 05</li>
+                                <li class="one2">Why Choose Us</li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+                <li class="navlist">Elements <i class="fa-solid fa-angle-down arrowdown" style="color: #fcfcfc;"></i>
+                </li>
+                <li class="navlist">Blog <i class="fa-solid fa-angle-down arrowdown" style="color: #fcfcfc;"></i>
+                </li>
+                <li class="navlist">Contact</li>
+            </ul>
+        </div>
+        <h2 class="one4">WELCOME TO TECHNO</h2>
+        <div class="main">
+            <h1 class="pais">PROVIDE ALL ITS SERVICES</h1>
+            <h1 class="hs">HOSTING SERVICES</h1>
+            <h1 class="dm">DIGITAL MARKETING SERVICES</h1>
+        </div>
+        <p class="paragraph">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt
+            ut
+            laboret dolore magna <br> aliqua. Ut en ad minim ullamco laboris nisi ut aliquip.</p>
+        <button class="btn3">ABOUT US</button>
+        <button class="btn1">HOW IT WORK</button>
+    </div>
+    <div class="section1">
+        <div class="one5">
+            <div class="circle">
+                <i class="fa-solid fa-gear fb" style="color: rgb(12,90,219);"></i>
+            </div>
+            <h2 class="one8">Product Engineering</h2>
+            <p class="one9">We have the expertise to help you <br> define a game plan, design the <br> products
+                customers want.</p>
+            <p class="one10">READ MORE <i class="fa-solid fa-arrow-right one11" style="color: rgb(12,90,219);"></i></p>
+        </div>
+        <div class="one6">
+            <div class="circlee">
+                <i class="fa-brands fa-square-facebook fb" style="color: rgb(12,90,219)"></i>
+            </div>
+            <h2 class="one12">Digital Services</h2>
+            <p class="one13">We have the expertise to help you <br> define a game plan, design the <br> products
+                customers want.</p>
+            <p class="one14">READ MORE <i class="fa-solid fa-arrow-right one11" style="color: rgb(251, 251, 251);"></i>
+            </p>
+        </div>
+        <div class="one7">
+            <div class="circle">
+                <i class="fa-solid fa-person-military-to-person fb" style="color: rgb(12,90,219)"></i>
+            </div>
+            <h2 class="one8">IT Consultancy</h2>
+            <p class="one9">We have the expertise to help you <br> define a game plan, design the <br> products
+                customers want.</p>
+            <p class="one10">READ MORE <i class="fa-solid fa-arrow-right one11" style="color: rgb(12,90,219);"></i></p>
+        </div>
+        <div class="one16">
+            <div class="icon">
+                <div class="icon1"><i class="fa-solid fa-play one17" style="color:rgb(12,90,219) ;"></i></div>
+
+                <div class="scale"></div>
+                <div class="scale1"></div>
+                <div class="scale2"></div>
+            </div>
+        </div>
+        <div class="one18">
+            <h1 class="one19">25</h1>
+            <h1 class="one20">Years of experience <br> in IT Solution & <br> Business</h1>
+            <p class="one21">There are many variations of passages of Lorem Ipsum available, <br> but the majority have
+                suffered alteration in some form, by injected <br> humour, or randomised words which don’t look even
+                slightly <br> believable. If you are going to use a passage of Lorem Ipsum, you <br> need to be sure
+                there isn’t anything embarrassing</p>
+            <p class="one21">There are many variations of passages of Lorem Ipsum available, <br> but the majority have
+                suffered alteration in some form, by injected <br> humour, or randomised words</p>
+            <button class="one22">More Details <i class="fa-solid fa-arrow-right one23"
+                    style="color: rgb(243, 245, 248);"></i> </button>
+        </div>
+    </div>
+    </div>
+    <div class="section2">
+        <h4 class="two1">OUR SERVICES</h4>
+        <h1 class="two2">We Run All Kinds Of IT Services <br>
+            With 20 Years Of Experience</h1>
+        <div class="two3">
+            <div class="two4"></div>
+        </div>
+        <div class="two5">
+            <div class="two6">
+                <div class="two10">
+                    <i class="fa-brands fa-facebook nine" style="color: #fcfcfd;"></i>
+                </div>
+                <h2 class="two11">Digital Services</h2>
+                <p class="two12">Digital solutions have transformed the <br> world’s customer expectations and the <br>
+                    profitable growths.</p>
+                <p class="two13">Read More <i class="fa-solid fa-arrow-right-long" style="color: #fcfcfd;"></i></p>
+            </div>
+            <div class="two7">
+                <div class="two10">
+                    <i class="fa-solid fa-gear nine" style="color: #ffffff;"></i>
+
+                </div>
+                <h2 class="two11">Product Development</h2>
+                <p class="two12">Digital solutions have transformed the <br> world’s customer expectations and the <br>
+                    profitable growths.</p>
+                <p class="two13">Read More <i class="fa-solid fa-arrow-right-long" style="color: #fcfcfd;"></i></p>
+            </div>
+            <div class="two8">
+                <div class="two10">
+                    <i class="fa-solid fa-group-arrows-rotate nine" style="color: #ffffff;"></i>
+                </div>
+                <h2 class="two11">Content Engineering</h2>
+                <p class="two12">Digital solutions have transformed the <br> world’s customer expectations and the <br>
+                    profitable growths.</p>
+                <p class="two13">Read More <i class="fa-solid fa-arrow-right-long" style="color: #fcfcfd;"></i></p>
+            </div>
+        </div>
+        <div class="two9">
+            <div class="two6">
+                <div class="two10">
+                    <i class="fa-solid fa-scale-unbalanced-flip nine" style="color: #f7f7f7;"></i>
+                </div>
+                <h2 class="two11">Experienced Design</h2>
+                <p class="two12">Digital solutions have transformed the <br> world’s customer expectations and the <br>
+                    profitable growths.</p>
+                <p class="two13">Read More <i class="fa-solid fa-arrow-right-long" style="color: #fcfcfd;"></i></p>
+            </div>
+            <div class="two7">
+                <div class="two10">
+                    <i class="fa-solid fa-people-group nine" style="color: #fafcff;"></i>
+                </div>
+                <h2 class="two11">Advisory Services</h2>
+                <p class="two12">Digital solutions have transformed the <br> world’s customer expectations and the <br>
+                    profitable growths.</p>
+                <p class="two13">Read More <i class="fa-solid fa-arrow-right-long" style="color: #fcfcfd;"></i></p>
+            </div>
+            <div class="two8">
+                <div class="two10">
+                    <i class="fa-solid fa-cloud-arrow-up nine" style="color: #fafcff;"></i>
+                </div>
+                <h2 class="two11">Data Structuring</h2>
+                <p class="two12">Digital solutions have transformed the <br> world’s customer expectations and the <br>
+                    profitable growths.</p>
+                <p class="two13">Read More <i class="fa-solid fa-arrow-right-long" style="color: #fcfcfd;"></i></p>
+            </div>
+        </div>
+    </div>
+    <div class="section3">
+        <div class="three">
+            <div class="three1">
+                <h1 class="three5">15 K</h1>
+                <p class="three6">Happy Clients</p>
+                <div class="heading"></div>
+            </div>
+        
+            <div class="three2">
+                <h1 class="three5">1280 +</h1>
+                <p class="three6">Account Number</p>
+                <div class="heading"></div>
+            </div>
+            <div class="three3">
+                <h1 class="three5">10 K</h1>
+                <p class="three6">Finished Projects</p>
+                <div class="heading"></div>
+            </div>
+            <div class="three4">
+                <h1 class="three5">992 +</h1>
+                <p class="three6">Win Awards</p>
+            </div>
+        </div>
+        <p class="four">CASE STUDIES</p>
+        <h1 class="four1">Some Of Our Case Studies</h1>
+        <div class="four2">
+            <div class="four3"></div>
+        </div>
+        <div class="button">
+            <p class="btn6">See All Cases <i class="fa-solid fa-arrow-right-long" style="color: #fcfcfd;"></i></p>
+        </div>
+        <div class="animation">
+            <div class="child">
+                <div class="image">
+                    <img src="./images/case2.jpg" alt="">
+                    <div class="overlay">
+                        <div class="seven">
+                            <p class="seven1">Solution For <br> Buisness</p>
+                            <p class="seven2">Design Marketing</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="image">
+                    <img src="./images/case7.jpg" alt="">
+                    <div class="overlay">
+                        <div class="seven">
+                            <p class="seven1">Solution For <br> Buisness</p>
+                            <p class="seven2">Design Marketing</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="image">
+                    <img src="./images/case3.jpg" alt="">
+                    <div class="overlay">
+                        <div class="seven">
+                            <p class="seven1">Solution For <br> Buisness</p>
+                            <p class="seven2">Design Marketing</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="image">
+                    <img src="./images/case5.jpg" alt="">
+                    <div class="overlay">
+                        <div class="seven">
+                            <p class="seven1">Solution For <br> Buisness</p>
+                            <p class="seven2">Design Marketing</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="image">
+                    <img src="./images/case4.jpg" alt="">
+                    <div class="overlay">
+                        <div class="seven">
+                            <p class="seven1">Solution For <br> Buisness</p>
+                            <p class="seven2">Design Marketing</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="image">
+                    <img src="./images/case1.jpg" alt="">
+                    <div class="overlay">
+                        <div class="seven">
+                            <p class="seven1">Solution For <br> Buisness</p>
+                            <p class="seven2">Design Marketing</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="image">
+                    <img src="./images/case2.jpg" alt="">
+                    <div class="overlay">
+                        <div class="seven">
+                            <p class="seven1">Solution For <br> Buisness</p>
+                            <p class="seven2">Design Marketing</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="image">
+                    <img src="./images/case7.jpg" alt="">
+                    <div class="overlay">
+                        <div class="seven">
+                            <p class="seven1">Solution For <br> Buisness</p>
+                            <p class="seven2">Design Marketing</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <div class="section4">
+        <p class="ten">PROCESS</p>
+        <h1 class="ten1">Our Working Process</h1>
+        <div class="ten2">
+            <div class="ten3"></div>
+        </div>
+        <div class="ten11">
+            <div class="ten4">
+                <div class="ten5">
+                    <p class="ten6">1</p>
+                </div>
+                <div class="ten7"></div>
+                <div class="ten8"></div>
+            </div>
+            <div class="ten9">
+                <p class="ten10">- - - - - - - - - - - - - - - - - - - - - - - </p>
+            </div>
+        </div>
+        <div class="ten12">
+            <div class="ten4">
+                <div class="ten5">
+                    <p class="ten6">2</p>
+                </div>
+                <div class="ten7"></div>
+                <div class="ten8"></div>
+            </div>
+            <div class="ten9">
+                <p class="ten10">- - - - - - - - - - - - - - - - - - - - - - - </p>
+            </div>
+            <div class="ten13">
+                <div class="ten5">
+                    <p class="ten6">3</p>
+                </div>
+                <div class="ten7"></div>
+                <div class="ten8"></div>
+            </div>
+        </div>
+        <div class="ten14">
+            <div class="ten15">
+                <h1 class="ten16">Select A Project</h1>
+                <p class="ten17">We have the technology and industry <br> expertise to develop solutions that can <br>
+                    connect people and businesses across <br> variety of mobile devices.</p>
+            </div>
+            <div class="ten15">
+                <h1 class="ten16">Project Analysis</h1>
+                <p class="ten17">We have the technology and industry <br> expertise to develop solutions that can <br>
+                    connect people and businesses across <br> variety of mobile devices.</p>
+            </div>
+            <div class="ten15">
+                <h1 class="ten18">Deliver Result</h1>
+                <p class="ten19">We have the technology and industry <br> expertise to develop solutions that can <br>
+                    connect people and businesses across <br> variety of mobile devices.</p>
+            </div>
+        </div>
+    </div>
+    <div class="section5">
+        <p class="ten20">TESTIMONIAL</p>
+        <h1 class="ten21">What Says <br>
+            Our Happy Clients</h1>
+        <div class="ten22">
+            <div class="ten23"></div>
+        </div>
+        <div class="ten24">
+            <p class="ten27">Sorem ipsum dolor sit amet there any <br> consectetur adipiscing eliter sed do <br> the
+                eiusmod tempor asem incididunt <br> ut labore dolore manga aliqua.Ut <br>enim adern minim</p>
+        </div>
+        <div class="ten25">
+            <p class="ten27">Sorem ipsum dolor sit amet there any <br> consectetur adipiscing eliter sed do <br> the
+                eiusmod tempor asem incididunt <br> ut labore dolore manga aliqua.Ut <br>enim adern minim</p>
+        </div>
+        <div class="ten26">
+            <p class="ten27">Sorem ipsum dolor sit amet there any <br> consectetur adipiscing eliter sed do <br> the
+                eiusmod tempor asem incididunt <br> ut labore dolore manga aliqua.Ut <br>enim adern minim</p>
+        </div>
+        <div class="ten28">
+            <div class="ten31"></div>
+            <div class="ten32">
+                <i class="fa-solid fa-star ten37" style="color: rgb(12, 102, 245);"></i>
+            </div>
+            <div class="ten33">
+                <i class="fa-solid fa-star ten37" style="color: rgb(12, 102, 245);"></i>
+            </div>
+            <div class="ten34">
+                <i class="fa-solid fa-star ten37" style="color: rgb(12, 102, 245);"></i>
+            </div>
+            <div class="ten35">
+                <i class="fa-solid fa-star ten37" style="color: gainsboro"></i>
+            </div>
+            <div class="ten36">
+                <i class="fa-solid fa-star ten37" style="color: gainsboro"></i>
+            </div>
+            <h2 class="ten38">Fatima Jahra</h2>
+            <p class="ten39">Developer</p>
+        </div>
+        <div class="ten29">
+            <div class="ten31"></div>
+            <div class="ten32">
+                <i class="fa-solid fa-star ten37" style="color: rgb(12, 102, 245);"></i>
+            </div>
+            <div class="ten33">
+                <i class="fa-solid fa-star ten37" style="color: rgb(12, 102, 245);"></i>
+            </div>
+            <div class="ten34">
+                <i class="fa-solid fa-star ten37" style="color: gainsboro;"></i>
+            </div>
+            <div class="ten35">
+                <i class="fa-solid fa-star ten37" style="color: gainsboro"></i>
+            </div>
+            <div class="ten36">
+                <i class="fa-solid fa-star ten37" style="color: gainsboro"></i>
+            </div>
+            <h2 class="ten38">Angel Jessica</h2>
+            <p class="ten39">Developer</p>
+        </div>
+        <div class="ten30">
+            <div class="ten40"></div>
+            <div class="ten32">
+                <i class="fa-solid fa-star ten37" style="color: rgb(12, 102, 245);"></i>
+            </div>
+            <div class="ten33">
+                <i class="fa-solid fa-star ten37" style="color: rgb(12, 102, 245);"></i>
+            </div>
+            <div class="ten34">
+                <i class="fa-solid fa-star ten37" style="color: rgb(12, 102, 245);"></i>
+            </div>
+            <div class="ten35">
+                <i class="fa-solid fa-star ten37" style="color: rgb(12, 102, 245)"></i>
+            </div>
+            <div class="ten36">
+                <i class="fa-solid fa-star ten37" style="color: gainsboro"></i>
+            </div>
+            <h2 class="ten38">Abraham Jhone</h2>
+            <p class="ten39">IT Manager</p>
+        </div>
+    </div>
+    <div class="section6">
+        <div class="ten50"></div>
+        <div class="ten51">
+            <p class="ten52">OUR EXPERIENCE</p>
+            <h1 class="ten53">Stay Up, Stay Running <br>
+                & Protected</h1>
+            <div class="ten54">
+                <div class="ten55"></div>
+            </div>
+            <p class="ten56">High-tech industries play an important role in the modern <br> economy, and often
+                experience significantly higher pay than <br> other industries. And Digital solutions</p>
+            <p class="ten57">Web Development</p>
+            <div class="ten60">90%</div>
+            <div class="ten58">
+                <div class="ten59"></div>
+                <p class="ten61">Web Design</p>
+                <div class="ten62">96%</div>
+                <div class="ten63">
+                    <div class="ten64"></div>
+                    <p class="ten65">Digital Marketing</p>
+                    <div class="ten66">70%</div>
+                    <div class="ten67">
+                        <div class="ten68"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="section7">
+        <p class="paragraphh ">LATEST ARTICLE</p>
+
+        <button class="six3">See All Blogs</button>
+        <h1 class="six">See Our Latest <br>
+            Blog Posts</h1>
+        <div class="six1">
+            <div class="six2"></div>
+        </div>
+        <div class="six4">
+            <div class="six7"></div>
+            <p class="six8">Techno</p>
+            <p class="six9">October 22,2020</p>
+            <h2 class="six10">Tiktok Illegally collecting <br>data sharing</h2>
+        </div>
+        <div class="six5">
+            <div class="six11"></div>
+            <p class="six8">Techno</p>
+            <p class="six9">October 22,2020</p>
+            <h2 class="six10">How can use our latest news<br>by techno</h2>
+        </div>
+        <div class="six6">
+            <div class="six12"></div>
+            <p class="six8">Techno</p>
+            <p class="six9">October 22,2020</p>
+            <h2 class="six10">Convincing reasons you need <br>to learn</h2>
+        </div>
+
+    </div>
+    <div class="section8">
+        <h1 class="six13">Subscribe Our Newsletter</h1>
+        <div class="six50">
+            <button class="six51">Subscribe</button>
+            <input class="six14" type="text" placeholder="Enter Your Email*">
+        </div>
+        
+    </div>
+    </div>
+    <div class="section9">
+        <div class="six16">
+            <div class="six20"></div>
+            <p class="six21">Completely strategize client-cent <br> Phosfluorescently iterate efficient <br>
+                internal or organic.</p>
+            <p class="six22">Follow Us</p>
+            <div class="six23">
+                <i class="fa-brands fa-facebook-f six25" style="color: #fcfcfc;"></i>
+            </div>
+            <div class="six24">
+                <i class="fa-brands fa-instagram six25" style="color: #ffffff;"></i>
+            </div>
+            <div class="six24">
+                <i class="fa-brands fa-twitter six25" style="color: #fafafa;"></i>
+            </div>
+            <div class="six24">
+                <i class="fa-brands fa-youtube six25" style="color: #ffffff;"></i>
+            </div>
+        </div>
+        <div class="six17">
+            <h3 class="six26">Quick Links</h3>
+            <ul>
+                <li class="six27"><i class="fa-solid fa-arrow-right-long" style="color: #fcfcfd;"></i> Home</li>
+                <li class="six27"><i class="fa-solid fa-arrow-right-long" style="color: #fcfcfd;"></i> About Us</li>
+                <li class="six27"><i class="fa-solid fa-arrow-right-long" style="color: #fcfcfd;"></i> Contact Us</li>
+                <li class="six27"><i class="fa-solid fa-arrow-right-long" style="color: #fcfcfd;"></i> Services</li>
+                <li class="six27"><i class="fa-solid fa-arrow-right-long" style="color: #fcfcfd;"></i> Our Team</li>
+            </ul>
+        </div>
+        <div class="six18">
+            <h2 class="six28">Popular Posts</h2>
+            <div class="six29"></div>
+            <h3 class="six30">Tiktok Illegally collecting <br> data sharing</h3>
+            <p class="six31">October 22, 2020</p>
+            <hr class="six32">
+            <div class="six33"></div>
+            <h3 class="six30">How can use our latest <br> news by</h3>
+            <p class="six31">October 22, 2020</p>
+        </div>
+        <div class="six19">
+            <h2 class="six28">Contact Info</h2>
+            <div class="six34">
+                <i class="fa-solid fa-location-dot six37" style="color: #fafcff;"></i>
+            </div>
+            <h2 class="six35">Location</h2>
+            <p class="six36">55 Main Street, New York.</p>
+            <div class="six34">
+                <i class="fa-solid fa-envelope six37" style="color: #ffffff;"></i>
+            </div>
+            <h2 class="six35">
+                Email Us</h2>
+            <p class="six36">example@gmail.com
+
+            </p>
+            <div class="six34">
+                <i class="fa-solid fa-phone six37" style="color: #ffffff;"></i>
+            </div>
+            <h2 class="six35">
+                Phone Us</h2>
+            <p class="six36">+012 (345) 678 99</p>
+
+        </div>
+        <hr class="six40">
+       <p class="six41">© 2022 Techno.All Rights Reserved.</p>
+       <div class="six42">
+        <ul>
+            <li class="six43">Privacy Policy</li>
+            <li class="six43">Terms & Conditions</li>
+            <li class="six43">Contact Us
+            </li>
+
+
+        </ul>
+       </div>
+
+
+    </div>
+
+    </div>
+
+</body>
+
+</html>
